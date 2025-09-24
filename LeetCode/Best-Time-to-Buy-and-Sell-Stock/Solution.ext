@@ -7,8 +7,8 @@ class Solution {
             if(price < buyPrice){
                 buyPrice = price;
             }else{
-                int curPrice = price - buyPrice;
-                maxProfit = Math.max(maxProfit, curPrice);
+                int curProfit = price - buyPrice;
+                maxProfit = Math.max(maxProfit, curProfit);
             }
         }
 
