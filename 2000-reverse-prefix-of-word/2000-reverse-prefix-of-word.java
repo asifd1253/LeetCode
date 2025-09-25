@@ -3,9 +3,9 @@ class Solution {
         int idx = -1;
         boolean flag = false;
 
-        for(char curChar : word.toCharArray()){
+        for(char c : word.toCharArray()){
             idx++;
-            if(curChar == ch && flag == false){
+            if(c == ch && flag == false){
                 flag = true;
                 break;
             }
@@ -16,9 +16,11 @@ class Solution {
         }
 
         StringBuilder sb = new StringBuilder();
+
         for(int i=idx; i>=0; i--){
             sb.append(word.charAt(i));
         }
+
         for(int i=idx+1; i<word.length(); i++){
             sb.append(word.charAt(i));
         }
