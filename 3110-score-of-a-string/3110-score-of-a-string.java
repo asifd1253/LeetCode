@@ -1,15 +1,13 @@
 class Solution {
     public int scoreOfString(String s) {
-        char arr[] = s.toCharArray();
+        int res = 0;
 
-        int result = 0;
-
-        for(int i=0; i<arr.length-1; i++){
-            char char1 = arr[i];
-            char char2 = arr[i+1];
-            result += Math.abs(char1 - char2);
+        for(int i=0; i<s.length()-1; i++){
+            int curChar = s.charAt(i);
+            int nextChar = s.charAt(i+1);
+            res += Math.abs(curChar - nextChar);
         }
 
-        return result;
+        return res;
     }
 }
