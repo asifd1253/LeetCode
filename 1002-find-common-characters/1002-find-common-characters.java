@@ -1,32 +1,36 @@
 class Solution {
     public List<String> commonChars(String[] words) {
-        ArrayList<String> res = new ArrayList<>();
-
-        //common so far
         int csf[] = new int[26];
+        String firstWord = words[0];
 
-        for(char ch : words[0].toCharArray()){
-            csf[ch-'a']++;
+        for(char ch : firstWord.toCharArray()){
+            int idx = ch - 'a';
+            csf[idx]++;
         }
 
         for(int i=1; i<words.length; i++){
-            //current in String
-            int cis[] = new int[26];
-            for(char ch : words[i].toCharArray()){
-                cis[ch-'a']++;
+            String curWord = words[i];
+            int curFreq[] = new int[26];
+            for(char ch : curWord.toCharArray()){
+                int idx = ch - 'a';
+                curFreq[idx]++;
             }
 
+            //update the common so far with min of chars in 2 strings
             for(int j=0; j<26; j++){
-                csf[j] = Math.min(csf[j], cis[j]);
+                csf[j] = Math.min(csf[j], curFreq[j]);
             }
         }
 
+        List<String> res = new ArrayList<>();
         for(int i=0; i<26; i++){
-            while(csf[i] > 0){
-                res.add(Character.toString((char)i+'a'));
-                csf[i]--;
+            int count = csf[i];
+            char ch = (char)(i + 'a');
+            while(count-- > 0){
+                res.add("" + ch);
             }
         }
+
         return res;
     }
 }
