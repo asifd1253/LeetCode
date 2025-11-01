@@ -25,5 +25,6 @@ CROSS JOIN Subjects sub
 LEFT JOIN Examinations e
 ON s.student_id = e.student_id
 AND sub.subject_name = e.subject_name
+  -- we will use GROUP BY when we are using COUNT LIKE aggregate functions and parameters are WHICH is in SELECT
 GROUP BY s.student_id, s.student_name, sub.subject_name
 ORDER BY s.student_id, sub.subject_name
