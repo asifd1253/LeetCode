@@ -7,6 +7,6 @@ WHERE employee_id IN (
     FROM Employee
     GROUP BY employee_id
     HAVING COUNT(employee_id) = 1
-) OR (
+)OR(
     primary_flag = 'Y'
-);
+)
