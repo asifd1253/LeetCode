@@ -8,6 +8,7 @@ WHERE (product_id, change_date) IN (
     WHERE change_date <= '2019-08-16'
     GROUP BY product_id
 )
+
 UNION
 
 SELECT product_id, 10 AS price
