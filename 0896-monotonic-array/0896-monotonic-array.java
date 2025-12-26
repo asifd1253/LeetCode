@@ -1,21 +1,18 @@
 class Solution {
     public boolean isMonotonic(int[] nums) {
-        boolean asce = false;
-        boolean desc = false;
+        boolean asceFlag = false;
+        boolean descFlag = false;
 
         for(int i=0; i<nums.length-1; i++){
             if(nums[i] < nums[i+1]){
-                asce = true;
-            }
-            
-            if(nums[i] > nums[i+1]){
-                desc = true;
+                asceFlag = true;
+            }else if(nums[i] > nums[i+1]){
+                descFlag = true;
             }
         }
 
-        if(asce && desc){
-            return false;
-        }
+        if(asceFlag && descFlag) return false;
+
         return true;
     }
 }
