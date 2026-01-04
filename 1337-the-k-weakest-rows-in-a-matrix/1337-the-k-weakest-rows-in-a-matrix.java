@@ -1,42 +1,40 @@
-class Solution {
-    public class Row implements Comparable<Row>{
-        int soldiers ;
-        int idx ;
+class RowDetails implements Comparable<RowDetails>{
+    int totalSoldiers;
+    int rowIdx;
 
-        public Row(int soldiers,int idx){
-            this.soldiers = soldiers;
-            this.idx = idx;
-        }
+    RowDetails(int totalSoldiers, int rowIdx){
+        this.totalSoldiers = totalSoldiers;
+        this.rowIdx = rowIdx;
+    }
 
-        @Override
-        public int compareTo(Row r2){
-            if(this.soldiers == r2.soldiers){
-                return this.idx - r2.idx;
-            }else{
-                return this.soldiers - r2.soldiers;
-            }
+    @Override
+    public int compareTo(RowDetails row2){
+        if(this.totalSoldiers == row2.totalSoldiers){
+            return this.rowIdx - row2.rowIdx;
+        }else{
+            return this.totalSoldiers - row2.totalSoldiers;
         }
     }
+}
+
+class Solution {
     public int[] kWeakestRows(int[][] army, int k) {
-        PriorityQueue<Row> pq = new PriorityQueue<>();
+        PriorityQueue<RowDetails> pq = new PriorityQueue<>();
 
-        for(int i=0; i<army.length; i++){          //for row
-            int count = 0;
-            for(int j=0; j<army[0].length; j++){     //for column
-                // count = count + army[i][j] == 1?1:0;
-                // count = count + army[i][j];
-                if(army[i][j] == 1){
-                    count += 1;
-                }
+        for(int row=0; row<army.length; row++){
+            int counter = 0;
+            for(int col=0; col<army[0].length; col++){
+                if(army[row][col]== 1) counter++;
             }
-            pq.add(new Row(count,i));
+
+            pq.offer(new RowDetails(counter, row));
         }
 
-        int arr[] = new int[k];
+        int res[] = new int[k];
         for(int i=0; i<k; i++){
-            arr[i] = pq.remove().idx;
+            res[i] = pq.remove().rowIdx;
         }
 
-        return arr;
+        return res;
     }
 }
