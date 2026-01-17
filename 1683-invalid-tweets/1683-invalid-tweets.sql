@@ -2,4 +2,4 @@
 
 SELECT tweet_id
 FROM Tweets
-WHERE LENGTH(content) > 15
+WHERE length(content) > 15
