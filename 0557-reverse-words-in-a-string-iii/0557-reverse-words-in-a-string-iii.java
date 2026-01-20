@@ -2,22 +2,25 @@ class Solution {
     public String reverseWords(String s) {
         String words[] = s.split(" ");
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder res = new StringBuilder();
+
+        boolean firstTime = true;
 
         for(String word : words){
-            StringBuilder curSb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
+
             for(int i=word.length()-1; i>=0; i--){
-                curSb.append(word.charAt(i));
+                sb.append(word.charAt(i));
             }
-            
-            if(sb.length() == 0){
-                sb.append(curSb);
+
+            if(firstTime == true){
+                res.append(sb);
+                firstTime = false;
             }else{
-                sb.append(" ").append(curSb);
+                res.append(" ").append(sb);
             }
-            
         }
 
-        return sb.toString();
+        return res.toString();
     }
 }
