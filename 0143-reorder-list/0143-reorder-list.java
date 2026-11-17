@@ -10,45 +10,60 @@
  */
 class Solution {
     public void reorderList(ListNode head) {
-        if(head == null || head.next == null){
+        if(head==null || head.next==null){
             return;
         }
 
-        ListNode slow = head;
-        ListNode fast = head.next;
+        ListNode prev=null;
+        ListNode slow=head;
+        ListNode fast=head;
 
-        while(fast != null && fast.next != null){
-            slow = slow.next;
-            fast = fast.next.next;
+        while(fast!=null && fast.next!=null){
+            prev=slow;
+            slow=slow.next;
+            fast=fast.next.next;
         }
 
-        ListNode mid = slow;
+        ListNode head2=prev.next;
+        prev.next=null;
 
-        ListNode prev = null;
-        ListNode curr = mid.next;
-        mid.next = null;
-        ListNode next;
+        prev=null;
+        ListNode cur=head2;
+        ListNode cnext=null;
 
-        while(curr != null){
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+        while(cur!=null){
+            cnext=cur.next;
+            cur.next=prev;
+            prev=cur;
+            cur=cnext;
         }
 
-        ListNode leftHead = head;
-        ListNode rightHead = prev;
-        ListNode leftNext;
-        ListNode rightNext;
+        head2=prev;
 
-        while(leftHead != null && rightHead != null){
-            leftNext = leftHead.next;
-            leftHead.next = rightHead;
-            rightNext = rightHead.next;
-            rightHead.next = leftNext;
+        ListNode ans=new ListNode(-1);
+        ListNode res=ans;
 
-            leftHead = leftNext;
-            rightHead = rightNext;
+        while(head!=null&&head2!=null){
+            res.next=head;
+            head=head.next;
+            res=res.next;
+            res.next=head2;
+            head2=head2.next;
+            res=res.next;
         }
+
+        while(head!=null){
+            res.next=head;
+            head=head.next;
+            res=res.next;
+        }
+
+        while(head2!=null){
+            res.next=head2;
+            head2=head2.next;
+            res=res.next;
+        }
+
+        head=ans.next;
     }
 }
