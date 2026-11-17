@@ -25,8 +25,18 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/asifd1253/LeetCode/tree/main/0019-remove-nth-node-from-end-of-list/) | Medium |
+| [0143-reorder-list](https://github.com/asifd1253/LeetCode/tree/main/0143-reorder-list/) | Medium |
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/asifd1253/LeetCode/tree/main/0019-remove-nth-node-from-end-of-list/) | Medium |
+| [0143-reorder-list](https://github.com/asifd1253/LeetCode/tree/main/0143-reorder-list/) | Medium |
+## Stack
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0143-reorder-list](https://github.com/asifd1253/LeetCode/tree/main/0143-reorder-list/) | Medium |
+## Recursion
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0143-reorder-list](https://github.com/asifd1253/LeetCode/tree/main/0143-reorder-list/) | Medium |
 <!---LeetCode Topics End-->
