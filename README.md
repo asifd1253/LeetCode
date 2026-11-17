@@ -21,4 +21,12 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0051-n-queens](https://github.com/asifd1253/LeetCode/tree/main/0051-n-queens/) | Hard |
+## Linked List
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0019-remove-nth-node-from-end-of-list](https://github.com/asifd1253/LeetCode/tree/main/0019-remove-nth-node-from-end-of-list/) | Medium |
+## Two Pointers
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0019-remove-nth-node-from-end-of-list](https://github.com/asifd1253/LeetCode/tree/main/0019-remove-nth-node-from-end-of-list/) | Medium |
 <!---LeetCode Topics End-->
