@@ -10,27 +10,25 @@ class Node {
 
 class Solution {
     public Node flatten(Node head) {
-        for(Node temp = head; temp != null; temp = temp.next){
-            if(temp.child != null){
+        for(Node temp=head; temp!=null; temp=temp.next){
+            if(temp.child!=null){
                 Node after = temp.next;
                 temp.next = temp.child;
                 temp.next.prev = temp;
                 temp.child = null;
 
-                Node curr = temp;
-                while(curr.next != null){
-                    curr = curr.next;
+                Node cur = temp;
+                while(cur.next != null){
+                    cur = cur.next;
                 }
 
-                curr.next = after;
-                
+                cur.next = after;
+
                 if(after != null){
-                    after.prev = curr;
+                    after.prev = cur;
                 }
-                
             }
         }
-
         return head;
     }
 }
