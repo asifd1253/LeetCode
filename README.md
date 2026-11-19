@@ -35,6 +35,7 @@
 ## Stack
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0071-simplify-path](https://github.com/asifd1253/LeetCode/tree/main/0071-simplify-path/) | Medium |
 | [0143-reorder-list](https://github.com/asifd1253/LeetCode/tree/main/0143-reorder-list/) | Medium |
 ## Recursion
 | Problem Name | Difficulty |
@@ -48,4 +49,8 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0430-flatten-a-multilevel-doubly-linked-list](https://github.com/asifd1253/LeetCode/tree/main/0430-flatten-a-multilevel-doubly-linked-list/) | Medium |
+## String
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0071-simplify-path](https://github.com/asifd1253/LeetCode/tree/main/0071-simplify-path/) | Medium |
 <!---LeetCode Topics End-->
